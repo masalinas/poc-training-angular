@@ -9,13 +9,15 @@ import { MatDrawer } from '@angular/material/sidenav'
 export class HomeComponent implements OnInit {
   
   @ViewChild(MatDrawer) 
-  private drawer: MatDrawer;
+  drawer: MatDrawer;
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  ngAfterViewInit(): void  {
-    this.drawer.toggle();
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.drawer.toggle();
+    });
   }
 }
