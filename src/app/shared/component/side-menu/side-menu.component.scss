@@ -1,9 +1,37 @@
+.menu-layout {
+    width: 200px;    
+}
+
+.menu-content {
+    padding: 10px;
+}
+
+.menu-panel-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #303c54;
+    height: 63px;
+}
+
+.menu-title {
+    color: white;
+    font-size: x-large;
+    font-family: fantasy;
+}
+
+.menu-img {
+    height: 55px;
+    padding: 5px;
+}
+
 .menu-button {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
+    color: #969FAC;
 
     mat-icon {
         margin-right: 8px;
