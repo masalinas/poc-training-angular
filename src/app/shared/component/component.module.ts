@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -13,16 +11,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 
-import { ProductComponent } from './main/product.component';
+// App components
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
-    ProductComponent
+    SideMenuComponent
   ],
   imports: [
     CommonModule,
-    FormsModule,
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
@@ -33,6 +33,12 @@ import { ProductComponent } from './main/product.component';
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
-  ]
+    MatSidenavModule,
+    MatDividerModule
+  ],
+  exports: [
+    SideMenuComponent
+  ],
+  providers: [],
 })
-export class ProductModule { }
+export class ComponentModule { }
