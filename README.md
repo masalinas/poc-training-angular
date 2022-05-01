@@ -9,6 +9,13 @@ Scaffolding angualr project
 ng new poc-training-angular
 ```
 
+Install keycloak dependency
+```sh
+npm install keycloak-angular keycloak-js --save
+```
+
+The last version of **keycloak-angular** install the **keycloak-js** version ^16.1.1, but this version is ot compatible with 18.0.0 so we must change from package the version of ^18.0.0 compatible with logout endpoint
+
 Install angular material dependency
 
 ```sh
