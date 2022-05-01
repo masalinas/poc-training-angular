@@ -7,6 +7,7 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 // Keycloak services
 import { initializeKeycloak } from './keycloak-init.factory';
 import { ConfigInitService } from './config-init.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [],
@@ -21,7 +22,8 @@ import { ConfigInitService } from './config-init.service';
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService, ConfigInitService]      
-    }
+    },
+    AuthService
   ],
 })
 export class AuthModule { }

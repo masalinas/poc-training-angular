@@ -42,6 +42,6 @@ import { HomeComponent } from './main/home.component';
     MatSidenavModule,
     MatDividerModule,
     ComponentModule
-  ]
+  ],  
 })
 export class HomeModule { }

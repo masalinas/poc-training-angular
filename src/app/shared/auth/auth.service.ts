@@ -1,8 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
-import { from, Observable } from 'rxjs';
 
-import { KeycloakProfile, KeycloakTokenParsed } from 'keycloak-js';
+import { KeycloakProfile, KeycloakTokenParsed, KeycloakLogoutOptions } from 'keycloak-js';
 
 @Injectable()
 export class AuthService {

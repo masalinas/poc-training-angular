@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav'
 
+import { AuthService } from '@app/shared/auth/auth.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatDrawer) 
   drawer: MatDrawer;
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void { }
 
@@ -19,5 +21,9 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.drawer.toggle();
     });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
