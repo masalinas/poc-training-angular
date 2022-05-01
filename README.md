@@ -16,6 +16,9 @@ npm install keycloak-angular keycloak-js --save
 
 The last version of **keycloak-angular** install the **keycloak-js** version ^16.1.1, but this version is ot compatible with 18.0.0 so we must change from package the version of ^18.0.0 compatible with logout endpoint
 
+For more detail read the official documentation
+[Keycloak 18.0.0 released](https://www.keycloak.org/2022/04/keycloak-1800-released)
+
 Install angular material dependency
 
 ```sh
