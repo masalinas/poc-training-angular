@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '@app/shared/auth/auth.guard';
 
+import { Page404Component } from '@app/views/page404/page404.component';
 import { HomeComponent } from './main/home.component';
 
 const routes: Routes = [
@@ -30,8 +31,21 @@ const routes: Routes = [
           roles: ["admin", "user"] 
         }
       },
+      {
+        path: 'settings',
+        loadChildren: () => import('@app/views/settings/settings.module').then(m => m.SettingsModule),
+        canActivate: [AuthGuard],
+        data: { 
+          roles: ["admin"] 
+        }
+      },
     ]
   },
+  { 
+    path: '**',
+    pathMatch: 'full' ,
+    component: Page404Component 
+  },  
 ];
 
 @NgModule({

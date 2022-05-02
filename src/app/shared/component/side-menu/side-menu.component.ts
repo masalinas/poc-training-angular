@@ -20,4 +20,8 @@ export class SideMenuComponent implements OnInit {
   onProductClick() {
     this.router.navigateByUrl('/home/product');
   }
+
+  onSettingsClick () {
+    this.router.navigateByUrl('/home/settings');
+  }
 }
