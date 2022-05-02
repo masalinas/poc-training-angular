@@ -10,10 +10,17 @@ export class AuthGuard extends KeycloakAuthGuard {
   }
   
   async isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean | UrlTree> {    
+    // control authenticated user status
     if (!this.authenticated) {
       await this.keycloak.login({
         redirectUri: window.location.origin + state.url,
       });
+    }
+    
+    // control authorization user roles
+    if (!route.data['roles'].some((role: string) => this.roles.includes(role))) {      
+      //this.router.navigate(['page403']);
+      return false;
     }
 
     return this.authenticated;

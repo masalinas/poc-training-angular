@@ -1,0 +1,23 @@
+.error-403-container {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #303c54;
+}
+
+.error-403-message {    
+    display: flex;
+    flex-direction: row;    
+    align-items: center;    
+    color: white;
+}
+
+.error-403-code {
+    font-size: 120px;
+    margin-right: 10px;
+}
+
+.error-403-title {
+    font-size: 30px;
+}
