@@ -15,15 +15,31 @@ export class HomeComponent implements OnInit {
 
   constructor(public authService: AuthService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getUserProfile();
+  }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void  {
     setTimeout(() => {
       this.drawer.toggle();
     });
   }
 
-  logout() {
+  getUserProfile(): void {
+    this.authService.loadUserProfile()
+    .then((userProfile) => {
+      // log ID Token
+      console.log(userProfile);
+
+      // log get roles from Access Token
+      console.log(this.authService.getRoles());
+    })
+    .catch((error) => {
+      console.log("Promise rejected with " + JSON.stringify(error));
+    });
+  }
+  
+  logout(): void {
     this.authService.logout();
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -12,20 +13,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDividerModule } from '@angular/material/divider';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { ComponentModule } from '@app/shared/component/component.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
-import { HomeComponent } from './main/home.component';
+import { DashboardComponent } from './main/dashboard.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    DashboardComponent
   ],
   imports: [
-    CommonModule,   
+    CommonModule,
+    DashboardRoutingModule,
     FormsModule,
     MatToolbarModule,
     MatInputModule,
@@ -37,10 +36,6 @@ import { HomeComponent } from './main/home.component';
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
-    MatSidenavModule,
-    MatDividerModule,
-    ComponentModule,
-    HomeRoutingModule,
-  ],  
+  ]
 })
-export class HomeModule { }
+export class DashboardModule { }

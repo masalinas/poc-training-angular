@@ -14,6 +14,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 
+import { ProductRoutingModule } from './product-routing.module';
+
 import { ProductComponent } from './main/product.component';
 
 @NgModule({
@@ -33,6 +35,7 @@ import { ProductComponent } from './main/product.component';
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
+    ProductRoutingModule
   ]
 })
 export class ProductModule { }
