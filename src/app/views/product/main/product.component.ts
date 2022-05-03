@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 
-import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatSort, Sort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
 
 import { Product } from '@app/shared/backend/model/product';
 import { ProductService } from '@app/shared/backend/api/product.service';
@@ -18,6 +19,8 @@ export class ProductComponent implements OnInit {
   products: Array<Product> = [];  
 
   @ViewChild(MatSort) sort: MatSort;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private productService: ProductService,
               private _liveAnnouncer: LiveAnnouncer) {     
@@ -36,6 +39,7 @@ export class ProductComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
   
   sortData(sortState: Sort) {
