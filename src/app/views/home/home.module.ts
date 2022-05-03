@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { ComponentModule } from '@app/shared/component/component.module';
@@ -39,8 +40,9 @@ import { HomeComponent } from './main/home.component';
     MatOptionModule,
     MatSidenavModule,
     MatDividerModule,
+    MatTooltipModule,
     ComponentModule,
-    HomeRoutingModule,
+    HomeRoutingModule,    
   ],  
 })
 export class HomeModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
 
 import {MatSort, Sort} from '@angular/material/sort';
@@ -13,9 +13,11 @@ import { ProductService } from '@app/shared/backend/api/product.service';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  products: Array<Product> = [];  
-  dataSource = new MatTableDataSource<Product>();
   displayedColumns: string[] = ['name', 'description', 'price', 'active'];
+  dataSource = new MatTableDataSource<Product>();
+  products: Array<Product> = [];  
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private productService: ProductService,
               private _liveAnnouncer: LiveAnnouncer) {     
@@ -32,7 +34,11 @@ export class ProductComponent implements OnInit {
       });
   }
 
-  announceSortChange(sortState: Sort) {
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+  
+  sortData(sortState: Sort) {
     // This example uses English messages. If your application supports
     // multiple language, you would internationalize these strings.
     // Furthermore, you can customize the message to add additional

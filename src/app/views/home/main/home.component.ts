@@ -8,8 +8,9 @@ import { AuthService } from '@app/shared/auth/auth.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  
+export class HomeComponent implements OnInit {  
+  userName: string;
+
   @ViewChild(MatDrawer) 
   drawer: MatDrawer;
 
@@ -28,6 +29,8 @@ export class HomeComponent implements OnInit {
   getUserProfile(): void {
     this.authService.loadUserProfile()
     .then((userProfile) => {
+      this.userName = userProfile.firstName + ' ' + userProfile.lastName;
+
       // log ID Token
       console.log(userProfile);
 
