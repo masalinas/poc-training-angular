@@ -15,7 +15,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-import  {MatSortModule } from '@angular/material/sort';
+import { MatSortModule } from '@angular/material/sort';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 // View modules
 import { ProductRoutingModule } from './product-routing.module';
@@ -43,6 +44,7 @@ import { ProductComponent } from './main/product.component';
     MatSelectModule,
     MatOptionModule,
     MatSortModule,
+    MatButtonToggleModule,
     ProductRoutingModule,
     BackendModule
   ]

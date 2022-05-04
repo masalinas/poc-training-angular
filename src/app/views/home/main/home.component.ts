@@ -10,6 +10,8 @@ import { AuthService } from '@app/shared/auth/auth.service';
 })
 export class HomeComponent implements OnInit {  
   userName: string;
+  titleView: string = 'Title View';
+  subtitleView: string = 'Subtitle View'
 
   @ViewChild(MatDrawer) 
   drawer: MatDrawer;
@@ -32,10 +34,10 @@ export class HomeComponent implements OnInit {
       this.userName = userProfile.firstName + ' ' + userProfile.lastName;
 
       // log ID Token
-      console.log(userProfile);
+      //console.log(userProfile);
 
       // log get roles from Access Token
-      console.log(this.authService.getRoles());
+      //console.log(this.authService.getRoles());
     })
     .catch((error) => {
       console.log("Promise rejected with " + JSON.stringify(error));

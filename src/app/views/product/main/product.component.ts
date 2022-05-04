@@ -14,7 +14,7 @@ import { ProductService } from '@app/shared/backend/api/product.service';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'description', 'price', 'active'];
+  displayedColumns: string[] = ['name', 'description', 'price', 'active', 'actions'];
   dataSource = new MatTableDataSource<Product>();
   products: Array<Product> = [];  
 
@@ -52,5 +52,13 @@ export class ProductComponent implements OnInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  onUpdateProduct(product: Product) {
+    console.log('Update product: ' + product.name);
+  }
+
+  onDeleteProduct(product: Product) {
+    console.log('Delete product: ' + product.name);
   }
 }
